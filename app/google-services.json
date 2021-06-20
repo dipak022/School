@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "20444802461",
+    "project_id": "my-collage-app-a0fd2",
+    "storage_bucket": "my-collage-app-a0fd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20444802461:android:6050e9c8c4e89f6ce7d374",
+        "android_client_info": {
+          "package_name": "quran.app.admincollageapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20444802461-upbh1q87ncql5cchkotolv1smdhlf3pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ55pSltlhWlQx8tEeVwzdMWN0ns2my1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20444802461-upbh1q87ncql5cchkotolv1smdhlf3pu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
