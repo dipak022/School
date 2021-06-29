@@ -23,10 +23,12 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
 
     private List<TeacherData> list;
     private Context context;
+    private String category;
 
-    public TeacherAdapter(List<TeacherData> list, Context context) {
+    public TeacherAdapter(List<TeacherData> list, Context context,String category) {
         this.list = list;
         this.context = context;
+        this.category = category;
     }
 
     @NonNull
@@ -45,7 +47,7 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
     public void onBindViewHolder(@NonNull TeacherViewAdapter holder, int position) {
         TeacherData item = list.get(position);
         holder.name.setText(item.getName());
-        holder.emai.setText(item.getEmail());
+        holder.email.setText(item.getEmail());
         holder.post.setText(item.getPost());
         try {
             Picasso.get().load(item.getImage()).into(holder.imageView);
@@ -63,6 +65,8 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
                 intent.putExtra("email",item.getEmail());
                 intent.putExtra("post",item.getPost());
                 intent.putExtra("image",item.getImage());
+                intent.putExtra("key",item.getKey());
+                intent.putExtra("category",category);
                 context.startActivity(intent);
             }
         });
@@ -70,7 +74,7 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
 
     public class TeacherViewAdapter extends RecyclerView.ViewHolder {
 
-        private TextView name,emai,post;
+        private TextView name,email,post;
         private Button update;
         private ImageView imageView;
 
@@ -78,10 +82,10 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
         public TeacherViewAdapter(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.showTeacherName);
-            emai=itemView.findViewById(R.id.showTeacherEmal);
+            email=itemView.findViewById(R.id.showTeacherEmal);
             post=itemView.findViewById(R.id.showTeacherPost);
-            imageView=itemView.findViewById(R.id.teacherImage);
-            update=itemView.findViewById(R.id.teacherUpdate);
+            imageView=itemView.findViewById(R.id.teacherImages);
+            update=itemView.findViewById(R.id.teacherUpdates);
 
         }
     }

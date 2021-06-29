@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/download">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </de.hdodenhof.circleimageview.CircleImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Admin Collage App"
+                android:layout_marginLeft="16dp"
+                android:textSize="18dp"
+                android:textColor="@color/textColor">
+
+            </TextView>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_marginLeft="-100dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+
+            </com.google.android.material.button.MaterialButton>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dipak Debnath. Thank You!"
+            android:textSize="17sp"
+            android:textColor="@color/textColor">
+
+        </TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY">
+            
+        </ImageView>
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

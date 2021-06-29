@@ -26,8 +26,8 @@ import quran.app.admincollageapp.R;
 
 public class UpdateFaculty extends AppCompatActivity {
     FloatingActionButton fab;
-    private RecyclerView computer;
-    private LinearLayout csNoData;
+    private RecyclerView computers;
+    private LinearLayout csNoDatas;
     private List<TeacherData> list1;
     private TeacherAdapter adapter;
 
@@ -41,9 +41,9 @@ public class UpdateFaculty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_faculty);
 
-        csNoData=findViewById(R.id.csNoData);
+        csNoDatas=findViewById(R.id.csNoData);
 
-        computer=findViewById(R.id.computer);
+        computers=findViewById(R.id.computer);
 
         reference= FirebaseDatabase.getInstance().getReference().child("teacher");
 
@@ -59,26 +59,26 @@ public class UpdateFaculty extends AppCompatActivity {
     }
 
     private void csDepartment() {
-        dbRef=reference.child("one");
-        reference.addValueEventListener(new ValueEventListener() {
+        dbRef=reference.child("bangla");
+        dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list1 = new ArrayList<>();
                 if (!snapshot.exists()){
-                    csNoData.setVisibility(View.VISIBLE);
-                    computer.setVisibility(View.GONE);
+                    csNoDatas.setVisibility(View.VISIBLE);
+                    computers.setVisibility(View.GONE);
 
                 }else {
-                    csNoData.setVisibility(View.GONE);
-                    computer.setVisibility(View.VISIBLE);
+                    csNoDatas.setVisibility(View.GONE);
+                    computers.setVisibility(View.VISIBLE);
                     for(DataSnapshot snapshot1:snapshot.getChildren()){
                         TeacherData data = snapshot1.getValue(TeacherData.class);
                         list1.add(data);
                     }
-                    computer.setHasFixedSize(true);
-                    computer.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(list1,UpdateFaculty.this);
-                    computer.setAdapter(adapter);
+                    computers.setHasFixedSize(true);
+                    computers.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
+                    adapter = new TeacherAdapter(list1,UpdateFaculty.this,"bangla");
+                    computers.setAdapter(adapter);
                 }
 
             }

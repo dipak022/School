@@ -69,7 +69,7 @@ public class AddTeacher extends AppCompatActivity {
         storageReference = FirebaseStorage.getInstance().getReference();
 
 
-        String [] items= new String[]{"Select Category","one","two","three"};
+        String [] items= new String[]{"Select Category","bangla","two","three"};
         addTeacherCategory.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,items));
         addTeacherCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
